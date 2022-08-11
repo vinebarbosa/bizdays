@@ -14,7 +14,11 @@
   "private": false,
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "tsc --declaration"
+    "build": "tsc --declaration",
+    "pub:patch": "npm version patch",
+    "pub:minor": "npm version minor",
+    "pub:major": "npm version major",
+    "postversion": "npm publish && git push && git push --tags"
   },
   "devDependencies": {
     "@types/node": "^18.7.1",
